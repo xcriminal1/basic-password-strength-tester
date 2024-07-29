@@ -1,24 +1,37 @@
-function testPasswordStrength() {
-    const passwordInput = document.getElementById('password').value;
+document.addEventListener("DOMContentLoaded", function() {
+    const inputField = document.querySelector(".input");
+    const button = document.querySelector("button");
+    const strengthDisplay = document.getElementById("strength");
 
-    fetch('/test-password', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: passwordInput })
-    })
-    .then(response => response.json())
-    .then(data => {
-        displayPasswordStrength(data.message);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        displayPasswordStrength('Error evaluating password strength');
+    function checkPasswordStrength() {
+        const password = inputField.value;
+        let strength = "Weak";
+        let color = "#ff0000"; // Default to red for weak
+
+        // Example password strength logic
+        if (password.length > 8) {
+            if (/[A-Z]/.test(password) && /[0-9]/.test(password)) {
+                strength = "Moderate";
+                color = "#ffa500"; // Orange for moderate
+            }
+            if (/[A-Z]/.test(password) && /[0-9]/.test(password) && /[@$!%*?&#]/.test(password)) {
+                strength = "Strong";
+                color = "#00ff00"; // Green for strong
+            }
+        }
+
+        strengthDisplay.textContent = strength;
+        strengthDisplay.style.color = color;
+    }
+
+    // Button click event
+    button.addEventListener("click", checkPasswordStrength);
+
+    // Input field Enter key event
+    inputField.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevent default Enter key behavior (form submission, etc.)
+            checkPasswordStrength();
+        }
     });
-}
-
-// Function to display password strength on the frontend
-function displayPasswordStrength(message) {
-    const strengthDiv = document.getElementById('strength');
-    strengthDiv.innerText = message;
-    strengthDiv.className = 'strength ' + message; // Add CSS class based on strength
-}
+});
