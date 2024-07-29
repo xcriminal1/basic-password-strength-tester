@@ -1,0 +1,30 @@
+# Password Strength Tester
+
+This project is a web application that allows users to test the strength of their passwords. It evaluates passwords based on criteria such as length, complexity, use of special characters, and common patterns.
+
+## Features
+- Checks password length
+- Checks for uppercase letters, numbers, and special characters
+- Provides feedback on password strength
+
+## Technologies Used
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js (Express)
+
+
+## Setup Instructions
+
+### Node.js
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/password-strength-tester.git
+   cd password-strength-tester
+
+npm install
+npm start
+
+Open your browser and navigate to http://localhost:3000.
+
+
+
+If this won't work then: node app.js
