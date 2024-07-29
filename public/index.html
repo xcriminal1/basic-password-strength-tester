@@ -5,16 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Strength Tester</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .strength { margin-top: 10px; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .strength {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .strength.Weak {
+            color: red;
+        }
+        .strength.Moderate {
+            color: orange;
+        }
+        .strength.Strong {
+            color: green;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Password Strength Tester</h1>
         <input type="password" id="password" placeholder="Enter your password">
-        <button onclick="testPassword()">Test Strength</button>
+        <button onclick="testPasswordStrength()">Test Strength</button>
         <div class="strength" id="strength"></div>
     </div>
     <script src="app.js"></script>
