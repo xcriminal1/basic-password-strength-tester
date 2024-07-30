@@ -30,12 +30,28 @@
     /* padding:7px; */
     width: 301px;
     height: 56px;
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     padding-inline: 59px;
     font-size: 18px;
     box-sizing: border-box; /* Ensure padding is included in width */
-  }
+}
+
+.show-hide-btn {
+    position: relative;
+    left: 339px;
+    bottom: 110px;
+    transform: translate(50%, 50%);
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    
+}
+        .show-hide-btn:focus {
+            outline: none;
+        }
   .grid {
     height: 800px;
     width: 800px;
@@ -507,11 +523,14 @@ button:hover .star-6 {
             <div class="border"></div>
 
             <div id="main">
+                
                 <input placeholder="Search..." type="text" name="text" class="input" />
+                
+                
                 <div id="input-mask"></div>
                 <div id="pink-mask"></div>
-                <div class="filterBorder"></div>
-                <div id="filter-icon"></div>
+                
+                
             </div>
         </div>
                 <button>Check Strength
@@ -631,10 +650,8 @@ button:hover .star-6 {
                       </div>
                 </button>
                 <div id="strength"></div>
-                <div class="toggle-password">
-                    <input type="checkbox" id="show-password">
-                    <label for="show-password">Show Password</label>
-                </div>
+                <div id="strength"></div>
+                <button class="show-hide-btn" id="show-hide-btn" style="width: 5px; display: flex; justify-content: center;">👁️</button>
             </div>
         
     </div>

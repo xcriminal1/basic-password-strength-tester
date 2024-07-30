@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const inputField = document.querySelector(".input");
     const button = document.querySelector("button");
     const strengthDisplay = document.getElementById("strength");
-    const showPasswordCheckbox = document.getElementById("show-password");
+    const showHideBtn = document.getElementById("show-hide-btn");
+   
 
     function checkPasswordStrength() {
         const password = inputField.value;
@@ -54,13 +55,16 @@ document.addEventListener("DOMContentLoaded", function() {
             strengthDisplay.style.color = "transparent";
         }
     });
-
+    
     // Show/Hide password functionality
-    showPasswordCheckbox.addEventListener("change", function() {
-        if (this.checked) {
+    showHideBtn.addEventListener("click", function() {
+        if (inputField.type === "password") {
             inputField.type = "text";
+            showHideBtn.textContent = "🙈"; // Change to eye-off icon
         } else {
             inputField.type = "password";
+            showHideBtn.textContent = "👁️"; // Change to eye icon
         }
     });
+    
 });
