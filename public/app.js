@@ -24,10 +24,16 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 strength = "Weak";
                 color = "#ff0000"; // Red for weak
+                strengthDisplay.style.fontWeight = "bold";
+                strengthDisplay.style.border = "none";
+                strengthDisplay.style.animation = "pulse 1s infinite";
             }
         } else {
             strength = "Weak";
             color = "#ff0000"; // Red for weak
+            strengthDisplay.style.fontWeight = "bold";
+            strengthDisplay.style.border = "none";
+            strengthDisplay.style.animation = "pulse 1s infinite";
         }
 
         strengthDisplay.textContent = strength;
@@ -55,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
             strengthDisplay.style.color = "transparent";
         }
     });
-    
+
     // Show/Hide password functionality
     showHideBtn.addEventListener("click", function() {
         if (inputField.type === "password") {
