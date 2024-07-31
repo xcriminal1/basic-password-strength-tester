@@ -606,6 +606,20 @@ button:hover .star-6 {
   transition: all 0.5s;
 }
 
+@keyframes shine {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.strong {
+    color: #00ff00; /* Green */
+    font-weight: bold;
+    border: 2px solid #00ff00;
+    background: linear-gradient(90deg, rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0.2));
+    background-size: 200% 100%;
+    animation: shine 1.5s linear infinite;
+}
+
         </style>
 </head>
 <body>

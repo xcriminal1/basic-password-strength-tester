@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (/[A-Z]/.test(password) && /[0-9]/.test(password) && /[@$!%*?&#]/.test(password)) {
                 strength = "Strong";
                 color = "#00ff00"; // Green for strong
+                strengthDisplay.className = 'strong';
             } else {
                 strength = "Weak";
                 color = "#ff0000"; // Red for weak
