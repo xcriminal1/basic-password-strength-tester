@@ -38,9 +38,9 @@
 }
 
 .show-hide-btn {
-    position: relative;
-    left: 339px;
-    bottom: 110px;
+    position: absolute;
+    left: 890px;
+    bottom: 395px;
     transform: translate(50%, 50%);
     cursor: pointer;
     background: transparent;
@@ -506,6 +506,106 @@ button:hover .star-6 {
   fill: #fffdef;
 }
 
+/* Footer Styles */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    animation: fadeIn 2s ease-out;
+}
+
+.footer-text {
+    margin: 0;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.custom-button {
+  position: absolute;
+  left: 1220px;
+  top: 50px;
+  background-color: #4f46e5; /* indigo-800 */
+  color: #e5e7eb; /* indigo-200 */
+  height: 4rem; /* 16 units */
+  width: 16rem; /* 64 units */
+  border: 2px solid transparent;
+  text-align: left;
+  padding: 0.75rem; /* 3 units */
+  font-size: 1rem; /* base size */
+  font-weight: bold;
+  border-radius: 0.5rem; /* rounded-lg */
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.custom-button:hover {
+  border-color: #2ecc71; /* green-500 */
+  text-decoration: underline;
+  text-underline-offset: 0.5rem; /* underline-offset-2 */
+  color: #2ecc71; /* green-500 */
+}
+
+.custom-button:hover::before {
+  box-shadow: 20px 20px 20px 30px #2ecc71; /* green-500 */
+  right: 1rem;
+  top: 1rem;
+  transform: translate(-1rem, -1rem);
+  filter: blur(0.5rem); /* blur effect */
+  transition: all 0.5s;
+}
+
+.custom-button::before {
+  content: '';
+  position: absolute;
+  width: 3rem; /* 12 units */
+  height: 3rem; /* 12 units */
+  background-color: #f97316; /* orange-500 */
+  border-radius: 50%;
+  z-index: 10;
+  right: 1rem;
+  top: 1rem;
+  transition: all 0.5s;
+}
+
+.custom-button:hover::after {
+  right: 2rem; /* 8 units */
+  top: 0.75rem; /* 3 units */
+  background-color: #ec4899; /* pink-500 */
+  filter: blur(0.5rem); /* blur effect */
+  transition: all 0.5s;
+}
+
+.custom-button::after {
+  content: '';
+  position: absolute;
+  width: 5rem; /* 20 units */
+  height: 5rem; /* 20 units */
+  background-color: #ec4899; /* pink-500 */
+  border-radius: 50%;
+  z-index: 10;
+  right: 2rem; /* 8 units */
+  top: 0.75rem; /* 3 units */
+  transition: all 0.5s;
+}
+
         </style>
 </head>
 <body>
@@ -647,12 +747,20 @@ button:hover .star-6 {
                           </g>
                         </svg>
                       </div>
+
                 </button>
-                <div id="strength" style="text-align: center; border: none; position: relative;"></div>
+                <div id="strength" style="text-align: center;left: 740px; border: none; position: absolute;"></div>
                 <!-- <div id="strength"></div> -->
                 <button class="show-hide-btn" id="show-hide-btn" style="width: 5px; display: flex; justify-content: center;">👁️</button>
             </div>
-        
+            <footer class="footer">
+              <p class="footer-text">© Xcriminal</p>
+          </footer>
+
+          
+          <button class="custom-button" onclick="window.open('https://github.com/xcriminal1', '_blank')">
+            See more
+        </button>
     </div>
     <script src="app.js"></script>
 </body>
