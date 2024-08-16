@@ -1,3 +1,6 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +10,18 @@
     <style>
         body {
             background-color: #000;
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif, g;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
+        }
+        body, p, h1, h2, h3, h4, h5, h6, a, span, div, li, input, button {
+          font-family: "Genos", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: 400; /* Default weight, you can adjust this */
+          font-style: normal;
         }
         /* .container {
             text-align: center;
@@ -624,7 +633,7 @@ button:hover .star-6 {
 </head>
 <body>
     <div class="container">
-        <h1 style="color: white;">Password Strength Checker</h1>
+        <h1 style="color: white; font-size: 2.5rem;">Password Strength Checker</h1>
         
         <div id="poda">
             <div class="glow"></div>
